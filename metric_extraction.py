@@ -64,12 +64,11 @@ def metrics_extract(data):
     result_2 = result_1.merge(result_total_time_spent, how='outer')
     result_3 = result_2.merge(result_visits, how='outer')
     result = result_3.merge(result_average_time_spent, how='outer')
-    result.to_csv('df_to_csv4.csv', index=False)
+    result.to_csv('data.csv', index=False)
     return result.shape
 
 
 if __name__ == '__main__':
-    dataset = pd.read_excel('test_data.xlsx')
-    print(dataset.shape)
+    dataset = pd.read_excel('data.xlsx')
     dim_result = metrics_extract(dataset)
     print(dim_result)
