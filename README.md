@@ -4,7 +4,7 @@ Average Time Spent on Site. The purpose of the project is to extract the data fr
 
 * The final working code is the python 3 script: metric_extraction.py
 * The Input file is the excel file data.xlsx
-* The generated output file is the comma separated value (CSV) file: data.csv 
+* The generated output file is the comma separated value (CSV) file. Sample output file data_7210.csv
 * The Unit Test is the file: test_metric_extraction.py
 
 The requirement packages are listed in the file requirements.txt
