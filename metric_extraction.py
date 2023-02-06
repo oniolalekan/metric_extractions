@@ -1,6 +1,7 @@
 from datetime import datetime
 import pandas as pd
 from pandas import to_datetime
+from random import randint
 
 
 def metrics_extract(data):
@@ -56,8 +57,15 @@ def metrics_extract(data):
     result_3 = result_2.merge(df_visit, how='outer')
     result = result_3.merge(df_avg_time_spent, how='outer')
     result = result.sort_values(by=['Site ID', 'Day of Month'], ascending=True)
-    result.to_csv('data.csv', index=False)
+    result.to_csv(f'data_{random_digits()}.csv', index=False)
     return result.shape
+
+
+def random_digits():
+    n = 4
+    range_start = 10**(n-1)
+    range_end = (10**n)-1
+    return randint(range_start, range_end)
 
 
 def transpose_data(df_dataset_list, day_viewed, date_viewed, cleaned_site_id, header_type):
